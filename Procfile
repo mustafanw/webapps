@@ -1,1 +1,1 @@
-web: gunicorn web_apps.wsgi:application --log-file -
+web: gunicorn web_apps.wsgi:affiliate_marketing --log-file -
