@@ -7,6 +7,7 @@
         <tr>
             <td>Product Url</td>
             <td>Product Tag</td>
+            <td>Affiliate Link</td>
             <td>
                 <a href="{% url 'product_insert' %}" class="btn btn-outline-success">
                     <i class="fas fa-plus"></i> Add New
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{product.product_url}}</td>
                 <td>{{product.affiliate_tag}}</td>
+                <td><a href="{{product.affiliate_url}}">Click Here</a></td>
                 <td>
                     <a href="{% url 'product_update' product.id %}" class="btn text-secondary px-0">
                         <i class="far fa-edit fa-lg"></i>

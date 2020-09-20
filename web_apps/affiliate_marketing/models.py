@@ -15,4 +15,9 @@ from django.db import models
 class Products(models.Model):
     product_url = models.CharField(max_length=200)
     affiliate_tag = models.CharField(max_length=200)
+    def _get_aff_link(self):
+        "Returns the person's full name."
+        return '{0}&tag={1}'.format(self.product_url,self.affiliate_tag)
+
+    affiliate_url = property(_get_aff_link)
     
