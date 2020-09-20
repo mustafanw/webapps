@@ -5,20 +5,15 @@
 {% block content %}
 <form action="" method="post" autocomplete="off">
     {% csrf_token %}
-    {{form.fullname|as_crispy_field}}
-    {{form.mobile|as_crispy_field}}
-    <div class="row">
-        <div class="col-md-4">
-            {{form.emp_code|as_crispy_field}}
-        </div>
-    </div>
+    {{form.product_url|as_crispy_field}}
+    {{form.affiliate_tag|as_crispy_field}}
     <div class="row">
         <div class="col-md-8">
             <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
                 Submit</button>
         </div>
         <div class="col-md-4">
-            <a href="{% url 'employee_list' %}" class="btn btn-secondary btn-block btn-lg">
+            <a href="{% url 'product_list' %}" class="btn btn-secondary btn-block btn-lg">
                 <i class="fas fa-stream"></i> Back to list
             </a>
         </div>

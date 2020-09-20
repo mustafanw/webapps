@@ -1,18 +1,16 @@
 from django import forms
-from .models import Employee
+from .models import Products
 
 
-class EmployeeForm(forms.ModelForm):
+class ProductForm(forms.ModelForm):
 
     class Meta:
-        model = Employee
-        fields = ('fullname','mobile','emp_code')
+        model = Products
+        fields = ('product_url','affiliate_tag')
         labels = {
-            'fullname':'Full Name',
-            'emp_code':'EMP. Code'
+            'product_url':'Product URL',
+            'affiliate_tag':'Affiliate Tag'
         }
 
     def __init__(self, *args, **kwargs):
-        super(EmployeeForm,self).__init__(*args, **kwargs)
-        # self.fields['position'].empty_label = "Select"
-        self.fields['emp_code'].required = False
+        super(ProductForm,self).__init__(*args, **kwargs)
