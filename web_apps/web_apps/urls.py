@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('amazon-affiliate/', include('affiliate_marketing.urls')),
+    path('', include('affiliate_marketing.urls')),
 ]

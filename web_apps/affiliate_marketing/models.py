@@ -15,9 +15,30 @@ from django.db import models
 class Products(models.Model):
     product_url = models.CharField(max_length=200)
     affiliate_tag = models.CharField(max_length=200)
+
+
+    def _get_product_name(self):
+        "Returns the person's full name."
+        link = self.product_url.split("/")
+        return link[3]
+
+    def _get_website(self):
+        "Returns the person's full name."
+        link = self.product_url.split("/")
+        return link[2].split(".")[1].title()
+
+    website = property(_get_website)
     def _get_aff_link(self):
         "Returns the person's full name."
-        return '{0}&tag={1}'.format(self.product_url,self.affiliate_tag)
+        if self.website=="Amazon":
+            aff_link = '{0}&tag={1}'.format(self.product_url,self.affiliate_tag)
+        elif self.website=="Flipkart":
+            aff_link = '{0}&affid={1}'.format(self.product_url, self.affiliate_tag)
+        return aff_link
+
+
+    product_name = property(_get_product_name)
 
     affiliate_url = property(_get_aff_link)
     
+

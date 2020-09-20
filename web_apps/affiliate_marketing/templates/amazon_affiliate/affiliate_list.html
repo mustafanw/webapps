@@ -5,7 +5,8 @@
 <table class="table table-borderless">
     <thead class="border-bottom font-weight-bold">
         <tr>
-            <td>Product Url</td>
+            <td>Website</td>
+            <td>Product Name</td>
             <td>Product Tag</td>
             <td>Affiliate Link</td>
             <td>
@@ -18,7 +19,8 @@
     <tbody>
         {% for product in product_list %}
             <tr>
-                <td>{{product.product_url}}</td>
+                <td>{{product.website}}</td>
+                <td>{{product.product_name}}</td>
                 <td>{{product.affiliate_tag}}</td>
                 <td><a href="{{product.affiliate_url}}">Click Here</a></td>
                 <td>

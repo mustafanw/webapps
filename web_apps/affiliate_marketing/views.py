@@ -26,10 +26,10 @@ def product_form(request, id=0):
             form = ProductForm(request.POST,instance= product)
         if form.is_valid():
             form.save()
-        return redirect('/amazon-affiliate/list')
+        return redirect('/list')
 
 
 def product_delete(request,id):
     product = Products.objects.get(pk=id)
     product.delete()
-    return redirect('/amazon-affiliate/list')
+    return redirect('/list')
